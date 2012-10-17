@@ -1,0 +1,19 @@
+# Mac OS X makefile for SDL based IRIX Soccer Game
+# 
+
+INCLUDE = -I/Library/Frameworks/SDL.framework/Headers
+
+#LIBDIR  = 
+#COMPILERFLAGS =
+
+CC = gcc
+CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
+LIBRARIES = -framework Cocoa -framework SDL
+all:  soccer
+
+soccer : soccer.o
+	$(CC) $(CFLAGS) soccer.c SDLmain.m $(LIBRARIES) -o mac_soccer 
+clean:
+	rm mac_soccer *.o
+
+

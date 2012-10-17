@@ -1,0 +1,14 @@
+TYPE soccerExecutable
+   SUPERTYPE Executable
+   MATCH tag == 68526852;
+   LEGEND IRIX Soccer Game
+   CMD OPEN      /usr/soccer/soccer
+   CMD DROP       /usr/soccer/soccer $SELECTED
+   ICON           {
+                  if (opened) {
+                           include("iconlib/soccer.open.fti");
+                  } else {
+                           include("iconlib/soccer.closed.fti");
+                  }
+                  include("/usr/lib/filetype/install/iconlib/soccer.fti"):
+}
